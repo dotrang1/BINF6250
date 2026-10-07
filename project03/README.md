@@ -147,5 +147,8 @@ Abby: This project has been difficult for me to wrap my head around because ther
 **Prompt:** 
 'Given these prompts in the context of the project can you explain their function'
 'Given this code, can you help me write a function to achive the desired output without using the max function'
+'See screenshot for invalid json file after merging PR, it was valid before. What might have happen here and how can I fix it?'
+'See screenshot, why after merging a commit are there a project 3 folder inside my set up project 3 folder? Updated notebook is inside the inside folder and my skeleton notebook is outside and untouched. What might have happen here?'
 **Used for:**
  Claude was used to assit in generation of functions and ensuring that parameters were met while not using the max function as well as intigrating and understanding the pre-written functions provided for this assignment.
+ Claude was used to trouble shoot GitHub 
