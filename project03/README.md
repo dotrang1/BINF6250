@@ -140,7 +140,12 @@ Project 3 is my first time being a group leader and owning repo. Navigating and 
 Dianah: Project 3 was my first time being a collaborator instead of a project leader, so I was able to learn that side of GitHub, figured out forking, how to open a pull request into someone else’s branch instead of my own and what my responsibilities look like when I am not managing the whole repo. 
 I am still getting my footing with it, and I think it’s helping me understand GitHub better. Running the NRF1 file with 90,061 sequences compared to the 837 promoters would have taken hours making it easier to sample 1,000 peaks.
 
+Abby: This project has been difficult for me to wrap my head around because there are so many moving parts and conditions that need to be applied algorithmically. However, having the extra time was helpful to be able to understand the concepts better before begining the coding portion of the assignment
+
 # Generative AI Appendix
-**Tool used:** Claude (Anthropic), Claude Sonnet 5
+**Tool used:** Claude (Anthropic), Claude Sonnet 5, Claude Opus 5.5 Medium
 **Prompt:** 
+'Given these prompts in the context of the project can you explain their function'
+'Given this code, can you help me write a function to achive the desired output without using the max function'
 **Used for:**
+ Claude was used to assit in generation of functions and ensuring that parameters were met while not using the max function as well as intigrating and understanding the pre-written functions provided for this assignment.
