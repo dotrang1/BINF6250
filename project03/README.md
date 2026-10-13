@@ -124,13 +124,18 @@ Issue => what we found out => what was our debug action:
 → Moved real edits to the correct path, deleted the duplicate.
 - NRF1 runtime (90,061 sequences, ~1 sec/iteration)\
 → `build_pfm()` reprocesses nearly the full sequence list every iteration, so runtime scales directly with dataset size — A full 10,000-iteration run took ~2h 44m\
-→ Measured real per-iteration cost with a short test run first, then let the full run continue in the background; subsequently adopted subsampling (see Results Interpretation) as alternative for meaningful IC result.
+→ Measured real per-iteration cost with a short test run first, then let the full run continue in the background; subsequently adopted subsampling (see Results Interpretation) as alternative for meaningful IC result.\
+→ Post Submission Additional information regarding one of the struggle - Peer Review Follow-up: Optimizing `build_pfm` Rebuilds: maintaining a
+running PFM total instead of rebuilding it from scratch each round - subtracting the outgoing motif's counts and adding the incoming motif's
+counts, rather than recomputing from all (N-1) sequences every iteration.\
+→ Did not replace our original implemetation on here, just locally - result: 9.78s, compared to the original 2h 44m.
 - Merge conflict resolved incorrectly ("accept both"), breaking notebook JSON\
 → Resolving a conflict by accepting both sides left raw conflict markers embedded in the `.ipynb` file, breaking its JSON structure (GitHub showed "Invalid Notebook")\
 → Reverted the broken merge commit to restore the last valid state, then manually re-applied the specific changes wanted from each version.
 - First-time Terminal clone/push\
 → `git clone` targets the whole repo, not a branch; switching branches is always a separate step.\
 → Practiced the full clone → branch → pull → edit → commit → push cycle.\
+
 
 # Personal Reflections
 ## Group Leader
