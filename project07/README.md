@@ -434,8 +434,12 @@ We also came away understanding why the algorithm works. The last-to-first mappi
 ## Other members
 Mara: The walkthrough provided by Marcus was extremely helpful in understanding the basis of the BWT. The principles behind the suffix array, doing the transform, and encoding/decoding were fairly straightforward once I sat down with a pencil and paper and did them by hand. The pattern-matching was the hardest part for me to understand conceptually. My group members were a fantastic team, and Trang was an excellent group leader. 
 
+Trivedi: I started every function by working it out by hand on banana$ before writing any code, and that habit helped a lot. The BWT, suffix array, and count/occur tables made sense pretty quickly that way, but backward search took me the longest. I kept getting lost once the full sorted matrix was taken away, and it only clicked when I traced the LF mapping step by step and saw how count and occur jump from one range to the next. The part that surprised me most was how the same Python feature behaves differently across functions: text[-1] wrapping around was exactly what BWT_from_suffix_array needed, but occur[a][-1] silently broke update_range. Testing taught me a lot too. 'ana' is a palindrome, so it couldn't catch a search reading in the wrong direction, and building the occur table by hand is how I found the typo in the starter docstring. Comparing every result against a brute-force check on a random 150 bp sequence gave me real confidence the code was correct and not just running.
+
 # Generative AI Appendix
 
 **Generative AI:**\
+
+Claude (Anthropic, Claude Opus 5.5) was used to debug run_length_decode and BWT_from_suffix_array, draft the test cases (including the random 150 bp DNA sequence), develop the main() function that brings everything together
 
 **Citations**\
