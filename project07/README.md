@@ -52,8 +52,7 @@ Pattern-matching tests (the assignment asks for a pattern that occurs once, seve
 | Occurs several times | `'CATT'` | `[69, 125, 130, 135]` |
 | Overlaps itself | `'ana'` in `banana` | `[1, 3]`: the match at 1 (positions 1–3) and the match at 3 (positions 3–5) share position 3 |
 | Does not occur | `'TTTT'` | `[]` |
-| Character not in the reference | `'NNN'`, and `'xyz'` in `banana` | `[]` |
-| Docstring example | `'na'` in `banana` | `[2, 4]` |
+
 
 Checking the inverse: the notebook has no separate inverse function. Reversibility follows from the LF mapping (see the pseudocode's *Checking the inverse* section). Traced by hand for `banana`, rows 0 → 1 → 5 → 2 → 6 → 3 → 4 rebuild `banana$`.
 
@@ -425,11 +424,12 @@ We also came away understanding why the algorithm works. The last-to-first mappi
 - **Memory:** the naive BWT stores n rotations of length n; our simple `suffix_array()` also creates every suffix while sorting, so it is faster than the naive BWT but not truly O(n log n). Fast suffix sorting needs special algorithms. `occur` stores a count for every row.
 - **Run-length encoding:** a text containing digits would break decoding; and on short inputs, or text without long runs, the encoding barely helps. On the random 150-bp DNA, the BWT went from 151 to 143 characters, because random DNA has little repeated structure. The paper finds the BWT needs large blocks to compress well - "a few kilobytes" (Burrows & Wheeler, 1994).
 
-**Things we still don't understand:**
-
 # Personal Reflections
 
 ## Group Leader
+Trang: For me, one of the things that made this project a lot easier to digest was the provided walkthrough. While doing it, the part that took me the most time to understand was the LF mapping and inverting the BWT. What finally made it click was tagging each letter by hand (a₁, a₂, a₃) and matching it to its twin in the first column. Once that clicks, the pseudocode, or at least the algorithm in plain English terms, comes fairly quickly.\
+We then reviewed each other’s work and realized most of our logic had come out the same, we then pick Trivedi's to be our finalized version, and after he had added on top of it: a generate_dna() function that makes a reproducible 150-bp DNA sequence for testing, a main() function that runs the search and compression together, and tests in every cell that print each result next to its expected value. \
+From there, we went back through what the assignment asked for in terms of testing and design. We made sure the tests covered each required case (a pattern that occurs once, several times, overlaps itself, and does not occur), added a check so the $ can only appear once and only at the end, and used the design questions to explain, for each function, its inputs, outputs, and the BWT property it relies on.
 
 ## Other members
 Mara: The walkthrough provided by Marcus was extremely helpful in understanding the basis of the BWT. The principles behind the suffix array, doing the transform, and encoding/decoding were fairly straightforward once I sat down with a pencil and paper and did them by hand. The pattern-matching was the hardest part for me to understand conceptually. My group members were a fantastic team, and Trang was an excellent group leader. 
@@ -440,6 +440,6 @@ Trivedi: I started every function by working it out by hand on banana$ before wr
 
 **Generative AI:**\
 
-Claude (Anthropic, Claude Opus 5.5) was used to debug run_length_decode and BWT_from_suffix_array, draft the test cases (including the random 150 bp DNA sequence), develop the main() function that brings everything together
+Claude (Anthropic, Claude Opus 5.5) was used to debug run_length_decode and BWT_from_suffix_array, draft the test cases (including the random 150 bp DNA sequence), develop the main() function that brings everything together. It was also used to help with takeaways from the readings. 
 
 **Citations**\
